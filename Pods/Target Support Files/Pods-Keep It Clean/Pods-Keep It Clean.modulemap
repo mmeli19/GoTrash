@@ -1,0 +1,6 @@
+framework module Pods_Keep_It_Clean {
+  umbrella header "Pods-Keep It Clean-umbrella.h"
+
+  export *
+  module * { export * }
+}

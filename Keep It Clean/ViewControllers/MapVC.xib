@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapVC" customModule="Keep_It_Clean" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="I2O-uz-q6z" id="n1F-I7-q1U"/>
+                <outlet property="mapView" destination="Lg1-cW-2qg" id="6Qt-Sc-Mmx"/>
+                <outlet property="trashCountLabel" destination="abQ-Ai-LCJ" id="sip-Gw-EpY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-ty-D7D">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52O-Tf-tDv">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QrK-Eh-5PK">
+                                    <rect key="frame" x="20" y="10" width="374" height="31"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="07m-eS-EE3">
+                                            <rect key="frame" x="0.0" y="0.0" width="91" height="32"/>
+                                            <segments>
+                                                <segment title="Map"/>
+                                                <segment title="List"/>
+                                            </segments>
+                                        </segmentedControl>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Trash Around You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abQ-Ai-LCJ">
+                                            <rect key="frame" x="211" y="0.0" width="163" height="31"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="QrK-Eh-5PK" firstAttribute="leading" secondItem="52O-Tf-tDv" secondAttribute="leading" constant="20" id="5W8-di-l1l"/>
+                                <constraint firstAttribute="trailing" secondItem="QrK-Eh-5PK" secondAttribute="trailing" constant="20" id="Yig-Kv-SwW"/>
+                                <constraint firstItem="QrK-Eh-5PK" firstAttribute="top" secondItem="52O-Tf-tDv" secondAttribute="top" constant="10" id="jnX-R6-DDC"/>
+                                <constraint firstAttribute="bottom" secondItem="QrK-Eh-5PK" secondAttribute="bottom" constant="10" id="rvq-HP-RyF"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhL-Y1-Wzh">
+                            <rect key="frame" x="0.0" y="51" width="414" height="801"/>
+                            <subviews>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-cW-2qg">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="801"/>
+                                </mapView>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="I2O-uz-q6z">
+                                    <rect key="frame" x="0.0" y="567" width="414" height="200"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="1FB-QZ-Xb2"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="Zn1-M7-r5u">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="I2O-uz-q6z" firstAttribute="leading" secondItem="PhL-Y1-Wzh" secondAttribute="leading" id="67d-xr-Q5d"/>
+                                <constraint firstAttribute="trailing" secondItem="Lg1-cW-2qg" secondAttribute="trailing" id="HAy-UF-jHq"/>
+                                <constraint firstAttribute="bottom" secondItem="I2O-uz-q6z" secondAttribute="bottom" constant="34" id="QBi-UT-mjm"/>
+                                <constraint firstAttribute="bottom" secondItem="Lg1-cW-2qg" secondAttribute="bottom" id="UoH-kq-Evd"/>
+                                <constraint firstAttribute="trailing" secondItem="I2O-uz-q6z" secondAttribute="trailing" id="dgu-J8-sbY"/>
+                                <constraint firstItem="Lg1-cW-2qg" firstAttribute="top" secondItem="PhL-Y1-Wzh" secondAttribute="top" id="lNa-0T-VxJ"/>
+                                <constraint firstItem="Lg1-cW-2qg" firstAttribute="leading" secondItem="PhL-Y1-Wzh" secondAttribute="leading" id="pC7-Li-zXb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="GFO-ty-D7D" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5Ou-vW-0Ox"/>
+                <constraint firstItem="GFO-ty-D7D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jtn-ob-vO9"/>
+                <constraint firstAttribute="bottom" secondItem="GFO-ty-D7D" secondAttribute="bottom" id="KNR-AN-qjA"/>
+                <constraint firstItem="GFO-ty-D7D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rRR-VE-7hI"/>
+            </constraints>
+            <point key="canvasLocation" x="121.73913043478262" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
